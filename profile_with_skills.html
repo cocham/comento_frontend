@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>개발자 소개</title>
+  <style>
+    :root{ --text:#111827; --muted:#6b7280; --line:#e5e7eb; }
+    *{ box-sizing:border-box }
+    body{ margin:0; color:var(--text); background:#fff;
+      font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Noto Sans KR","Apple SD Gothic Neo","Malgun Gothic",Arial,sans-serif; line-height:1.65; }
+    .container{ max-width:1000px; margin:52px auto; padding:0 24px; }
+    .header{ display:flex; align-items:flex-start; justify-content:space-between; gap:16px; }
+    .title h1{ margin:0; font-size:48px; font-weight:800; letter-spacing:-0.5px; }
+    .subtitle{ margin-top:6px; font-size:18px; color:var(--muted); }
+    .contact{ text-align:right; font-size:16px; }
+    .contact a{ color:#1f2937; text-decoration:none; } .contact a:hover{ text-decoration:underline; }
+    .icons{ margin-top:8px; }
+    .icon{ display:inline-grid; place-items:center; width:38px;height:38px; border-radius:50%; background:#111827; margin-left:8px; }
+    .icon svg{ width:20px;height:20px; fill:#fff; }
+    hr{ border:0; border-top:1px solid var(--line); margin:28px 0; }
+    h2.section-title:first-of-type { border-top: 0; }
+    h2.section-title{ text-align:center; font-size:28px; margin:0; padding-top:8px; border-top:1px dashed var(--line); }
+    .about-grid{ display:grid; grid-template-columns:220px 1fr; gap:32px; margin-top:20px; align-items:start; }
+    .photo{ width:220px;height:220px; border-radius:50%; border:6px solid #f3f4f6; background:#d1d5db; background-image:url('your-photo.jpg');
+      background-position:center; background-size:cover; box-shadow:0 6px 20px rgba(0,0,0,.08); object-fit: cover;}
+    .bullets{ padding-left:20px; } .bullets li{ margin:6px 0; }
+    .labeled-row{ display:grid; grid-template-columns:220px 1fr; gap:32px; margin-top:24px; align-items:start; }
+    .side-label{ font-size:22px; font-weight:700; color:#1f2937; }
+    .kv-list{ list-style:disc; padding-left:20px; } .kv-list li{ margin:6px 0; }
+    .edu-entry{ display:grid; grid-template-columns:1.2fr 1fr; gap:24px; margin-top:18px; }
+    .school h3{ margin:0 0 6px 0; font-size:22px; font-weight:800; }
+    .school .meta{ color:var(--muted); font-size:14px; }
+    .courses .tag{ margin:4px 0; } .courses .title{ font-weight:700; margin-bottom:6px; display:block; }
+    @media (max-width:760px){ .header{ flex-direction:column; align-items:flex-start; } .contact{ text-align:left; }
+      .about-grid{ grid-template-columns:1fr; } .photo{ margin:0 auto; } .labeled-row{ grid-template-columns:1fr; } .edu-entry{ grid-template-columns:1fr; } }
+  </style>
+</head>
+<body>
+  <main class="container">
+    <header class="header">
+      <div class="title">
+        <h1>김민희</h1>
+        <div class="subtitle">JAVA Back-end Developer</div>
+      </div>
+      <div class="contact">
+        <div>Email: <a href="mailto:your.email@example.com">mh020805@naver.com</a></div>
+        <!-- <div>Web: <a href="https://your-blog.example.com" target="_blank" rel="noreferrer">https://your-blog.example.com</a></div> -->
+        <div class="icons" aria-label="소셜 링크">
+          <a class="icon" href="https://github.com/cocham" target="_blank" title="GitHub" rel="noreferrer">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 0C5.37 0 0 5.47 0 12.23c0 5.41 3.44 9.99 8.2 11.62.6.12.82-.27.82-.6 0-.3-.01-1.09-.02-2.14-3.34.74-4.04-1.64-4.04-1.64-.55-1.43-1.35-1.81-1.35-1.81-1.1-.77.08-.76.08-.76 1.22.09 1.86 1.27 1.86 1.27 1.08 1.88 2.83 1.34 3.52 1.02.11-.8.42-1.34.76-1.65-2.67-.31-5.48-1.38-5.48-6.16 0-1.36.47-2.47 1.24-3.34-.13-.31-.54-1.55.12-3.22 0 0 1.01-.33 3.3 1.27a11.1 11.1 0 0 1 6.01 0c2.29-1.6 3.3-1.27 3.3-1.27.66 1.67.25 2.9.12 3.22.77.87 1.24 1.98 1.24 3.34 0 4.79-2.82 5.84-5.5 6.15.43.38.81 1.12.81 2.26 0 1.64-.02 2.96-.02 3.36 0 .33.22.72.83.6 4.75-1.63 8.19-6.2 8.19-11.62C24 5.47 18.63 0 12 0z"/></svg>
+          </a>
+        </div>
+      </div>
+    </header>
+
+    <hr />
+    <h2 class="section-title">About Me</h2>
+    <section class="about-grid">
+      <img class="photo" src="./KakaoTalk_20250808_233811223.jpg" alt="프로필 사진" />
+      <ul class="bullets">
+        <li>안녕하세요. 미래의 백엔드 개발자 <strong>김민희</strong>입니다.</li>
+        <li>Spring Boot 기반 백엔드 개발 경험이 있습니다.</li>
+      </ul>
+    </section>
+
+    <h2 class="section-title" style="margin-top:36px;">Skill</h2>
+    <section class="labeled-row" aria-label="백엔드 기술 스택">
+    <div class="side-label">백엔드 기술 스택</div>
+    <div>
+      <ul class="kv-list">
+        <li><strong>언어</strong>: Java</li>
+        <li><strong>프레임워크</strong>: Spring Boot, Spring MVC</li>
+        <li><strong>데이터 접근</strong>: JPA(Hibernate), QueryDSL(동적 쿼리·페이징)</li>
+        <li><strong>보안/인증</strong>: Spring Security OAuth2, JWT(Access/Refresh, 인가 필터·예외 처리)</li>
+        <li><strong>실시간</strong>: WebSocket-STOMP(채팅·실시간 위치), CONNECT 헤더 JWT 인증, 토픽 구독 설계</li>
+        <li><strong>알림</strong>: SSE(Server-Sent Events) 알림 스트림(Last-Event-ID, 재연결 처리)</li>
+        <li><strong>결제</strong>: Toss 간편결제 연동(결제창, 시그니처 검증, 승인/취소, 웹훅 처리)</li>
+      </ul>
+    </div>
+  </section>
+
+    <h2 class="section-title" style="margin-top:36px;">Education</h2>
+    <section class="edu-entry">
+      <div class="school">
+        <h3>한국공학대학교</h3>
+        <div class="meta">컴퓨터공학전공</div>
+        <div class="meta">2021.03 – 2026.02 (졸업 예정)</div>
+      </div>
+      <div class="courses">
+        <span class="title">[전공 과목]</span>
+        <div class="tag">운영체제, 네트워크, 리눅스 프로그래밍 수업 등을 들으며 내외 전반적인 프로토콜에 대한 지식 함양</div>
+        <div class="tag">알고리즘, 자료구조 수업을 통해 다양한 자료구조 및 알고리즘에 대한 접근 방법과 풀이 방법 학습</div>
+        <div class="tag">객체지향 프로그래밍 수업을 통해 다양한 디자인 패턴의 구조 및 활용 방법 학습</div>
+      </div>
+    </section>
+  </main>
+</body>
+</html>
