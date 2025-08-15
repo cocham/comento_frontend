@@ -1,0 +1,105 @@
+:root{
+  --bg: #0f1115;
+  --panel: #161a22;
+  --text: #eef2ff;
+  --muted: #9aa3b2;
+  --accent: #3b82f6;
+  --danger: #ef4444;
+  --ok: #22c55e;
+
+  --cell: #0047ab;
+  --cell-hover: #273044;
+  --cell-open: #0e1320;
+  --cell-flag: #1a2a3f;
+  --gap: 6px;
+  --radius: 10px;
+}
+
+* { box-sizing: border-box; }
+html, body { height: 100%; }
+body{
+  margin: 0; padding: 0;
+  font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, "Noto Sans KR", Apple SD Gothic Neo, Arial, sans-serif;
+  background: radial-gradient(1200px 1200px at 80% -100px, #1b2240, #0b0d16 60%);
+  color: var(--text);
+}
+
+.app{
+  max-width: 1050px;
+  margin: 24px auto;
+  padding: 16px;
+}
+
+.topbar h1 { margin: 0 0 12px; font-weight: 800; letter-spacing: .2px; }
+
+.controls{
+  display: flex; flex-wrap: wrap; gap: 10px; align-items: center;
+  padding: 12px; background: var(--panel); border-radius: var(--radius);
+}
+.controls label{
+  display: inline-flex; align-items: center; gap: 6px;
+  color: var(--muted); font-size: 14px; background: #101522; padding: 6px 8px; border-radius: 8px;
+}
+.controls input{
+  width: 70px; border: 1px solid #263049; background: #0c1220; color: var(--text);
+  padding: 6px 8px; border-radius: 6px; outline: none;
+}
+.btn{
+  border: 1px solid #2c3552; background: #131a2c; color: var(--text);
+  padding: 8px 12px; border-radius: 8px; cursor: pointer;
+}
+.btn:hover{ background: #18213a; }
+.btn.primary{ border-color: var(--accent); background: #0f1a34; }
+.btn.primary:hover{ background: #16244a; }
+.btn.danger{ border-color: var(--danger); background: #240f13; }
+.btn.danger:hover{ background: #35151b; }
+
+.statusbar{
+  display: flex; gap: 8px; margin-top: 12px; flex-wrap: wrap;
+}
+.status-chip{
+  background: #0f1529; border: 1px solid #273155;
+  color: var(--text); border-radius: 999px; padding: 6px 12px; font-size: 14px;
+}
+
+.board{
+  margin-top: 16px;
+  display: grid;
+  gap: var(--gap);
+  justify-content: start;
+  background: linear-gradient(180deg, rgba(255,255,255,0.04), rgba(255,255,255,0.02));
+  padding: 12px;
+  border-radius: var(--radius);
+  box-shadow: inset 0 0 0 1px #1e2741, 0 10px 30px rgba(0,0,0,.3);
+}
+.cell{
+  user-select: none;
+  width: 36px; height: 36px;
+  display: inline-flex; align-items: center; justify-content: center;
+  background: var(--cell);
+  border-radius: 8px;
+  font-weight: 700;
+  border: 1px solid #2a3454;
+  transition: background .08s ease, transform .04s ease;
+}
+.cell:hover{ background: var(--cell-hover); }
+.cell.open{ background: var(--cell-open); border-color: #39456f; }
+.cell.flag{ background: var(--cell-flag); outline: 1px dashed #365a9b; }
+.cell.mine.open{ background: #3b0f17; border-color: #6b1f2d; }
+.cell.disabled{ opacity: .7; pointer-events: none; }
+
+.num-1{ color: #3b82f6; }
+.num-2{ color: #22c55e; }
+.num-3{ color: #f59e0b; }
+.num-4{ color: #ef4444; }
+.num-5{ color: #a855f7; }
+.num-6{ color: #14b8a6; }
+.num-7{ color: #eab308; }
+.num-8{ color: #94a3b8; }
+
+.help{ color: var(--muted); margin-top: 10px; font-size: 14px; }
+
+/* 반응형: 보드가 넓어지면 셀 조금 키움 */
+@media (min-width: 900px){
+  .cell{ width: 40px; height: 40px; }
+}

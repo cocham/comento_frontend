@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <title>지뢰찾기</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+  <div class="app">
+    <header class="topbar">
+      <h1>💣 지뢰찾기</h1>
+
+      <div class="controls">
+        <label>
+          행
+          <input id="rows" type="number" min="5" max="40" value="12">
+        </label>
+        <label>
+          열
+          <input id="cols" type="number" min="5" max="40" value="12">
+        </label>
+        <label>
+          지뢰
+          <input id="mines" type="number" min="1" max="400" value="20">
+        </label>
+        <label>
+          제한(초)
+          <input id="limit" type="number" min="10" max="999" value="180">
+        </label>
+
+        <button id="startBtn" class="btn primary">게임 시작</button>
+        <button id="pauseBtn" class="btn">일시정지</button>
+        <button id="resumeBtn" class="btn">재개</button>
+        <button id="restartBtn" class="btn danger">리셋</button>
+      </div>
+
+      <div class="statusbar">
+        <div class="status-chip">⏱️ <span id="timeLeft">0</span>s</div>
+        <div class="status-chip">🚩 <span id="flagsLeft">0</span></div>
+        <div class="status-chip">😀 <span id="gameState">대기</span></div>
+      </div>
+    </header>
+
+    <main>
+      <div id="board" class="board" aria-label="지뢰 보드" role="grid"></div>
+    </main>
+
+    <footer class="help">
+      <p>왼쪽클릭: 열기 / 오른쪽클릭: 깃발 토글</p>
+    </footer>
+  </div>
+
+  <script type="module" src="./js/index.js"></script>
+</body>
+</html>
