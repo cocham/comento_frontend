@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Project #2 계산기</title>
+  <link rel="stylesheet" href="calc.css"/>
+</head>
+<body>
+  <main class="app">
+    <section class="calc">
+      <h1 class="title">계산기</h1>
+      <div class="display" aria-live="polite">
+        <div id="display-prev" class="display-prev" aria-label="이전 입력"></div>
+        <div id="display-main" class="display-main" aria-label="현재 값">0</div>
+      </div>
+      <div class="keypad" role="group" aria-label="계산 키패드">
+        <button class="key key--util" data-action="clear" data-key="Escape" aria-label="초기화">C</button>
+        <button class="key key--util" data-action="backspace" data-key="Backspace" aria-label="지우기">⌫</button>
+        <button class="key key--util" data-action="percent" data-key="%">%</button>
+        <button class="key key--op" data-op="divide" data-key="/" aria-label="나누기">÷</button>
+        <button class="key" data-digit="7" data-key="7">7</button>
+        <button class="key" data-digit="8" data-key="8">8</button>
+        <button class="key" data-digit="9" data-key="9">9</button>
+        <button class="key key--op" data-op="multiply" data-key="*" aria-label="곱하기">×</button>
+        <button class="key" data-digit="4" data-key="4">4</button>
+        <button class="key" data-digit="5" data-key="5">5</button>
+        <button class="key" data-digit="6" data-key="6">6</button>
+        <button class="key key--op" data-op="subtract" data-key="-" aria-label="빼기">−</button>
+        <button class="key" data-digit="1" data-key="1">1</button>
+        <button class="key" data-digit="2" data-key="2">2</button>
+        <button class="key" data-digit="3" data-key="3">3</button>
+        <button class="key key--op" data-op="add" data-key="+" aria-label="더하기">+</button>
+        <button class="key key--util" data-action="toggle-sign" data-key="F9" aria-label="부호 변경">±</button>
+        <button class="key" data-digit="0" data-key="0">0</button>
+        <button class="key" data-action="decimal" data-key=".">.</button>
+        <button class="key key--equals" data-action="equals" data-key="Enter" aria-label="결과">=</button>
+      </div>
+    </section>
+  </main>
+  <script src="calc.js"></script>
+</body>
+</html>

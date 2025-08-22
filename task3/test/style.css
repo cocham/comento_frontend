@@ -1,0 +1,221 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    background-color: #f0f2f5;
+    color: #333;
+}
+
+.project-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.widget-container {
+    background-color: #ffffff;
+    border-radius: 15px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    padding: 25px 30px;
+    width: 100%;
+    max-width: 400px;
+    box-sizing: border-box;
+}
+
+h1 {
+    text-align: center;
+    color: #2c3e50;
+    margin-top: 0;
+    margin-bottom: 20px;
+    font-size: 2em;
+}
+
+.status-bar {
+    text-align: right;
+    font-size: 0.8em;
+    color: #7f8c8d;
+    margin-bottom: 15px;
+}
+
+.display-panel {
+    background-color: #2c3e50;
+    color: #ecf0f1;
+    border-radius: 8px;
+    padding: 15px 20px;
+    margin-bottom: 20px;
+}
+
+.display-panel .label {
+    font-size: 0.9em;
+    color: #95a5a6;
+    margin-bottom: 8px;
+}
+
+.time-display {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 3em;
+    font-weight: bold;
+    text-align: center;
+    color: #34e7e4;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+
+    line-height: 1.1;
+    letter-spacing: 0.5px;
+    font-variant-numeric: tabular-nums;
+}
+
+.time-display .date,
+.time-display .clock {
+    display: block;
+    white-space: nowrap; 
+}
+
+.time-display.dead {
+    color: #34e7e4;
+}
+
+.battery-dead-icon {
+    font-size: 1em;     
+    animation: blink 1s steps(2, start) infinite;
+}
+@keyframes blink {
+    to { opacity: 0; }
+}
+
+.alarm-display {
+    min-height: 40px;
+    font-size: 1em;
+    padding-left: 5px;
+}
+
+.control-panel {
+    display: flex;
+    gap: 10px;
+    justify-content: space-between;
+}
+
+.control-panel input[type="number"] {
+    flex: 1;
+    min-width: 0;
+    width: auto;
+    padding: 12px;
+    border: 1px solid #bdc3c7;
+    border-radius: 5px;
+    font-size: 1em;
+    text-align: center;
+    box-sizing: border-box;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.control-panel input[type="number"]:focus {
+    outline: none;
+    border-color: #3498db;
+    box-shadow: 0 0 5px rgba(52, 152, 219, 0.5);
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+#add-alarm-btn {
+    flex: 0 0 80px;
+    padding: 12px 16px;
+    background-color: #3498db;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 1em;
+    font-weight: bold;
+    cursor: pointer;
+    white-space: nowrap;             
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+#add-alarm-btn:hover {
+    background-color: #2980b9;
+}
+
+#add-alarm-btn:active {
+    transform: scale(0.98);
+}
+
+
+.alarm-display {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    overflow-y: auto;
+}
+
+.alarm-item {
+    display: flex;
+    align-items: center;            
+    justify-content: space-between;
+    gap: 10px;
+    padding: 6px 10px;
+    background: rgba(236, 240, 241, 0.06);
+    border: 1px solid rgba(236, 240, 241, 0.08);
+    border-radius: 6px;
+    color: #ecf0f1;
+}
+
+.alarm-item > span {
+    flex: 1;                        
+    white-space: nowrap;
+}
+
+.delete-alarm-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 6px 10px;
+    line-height: 1;                 
+    border: none;
+    border-radius: 5px;
+    background: #e74c3c;
+    color: white;
+    cursor: pointer;
+}
+.delete-alarm-btn:hover {
+    filter: brightness(0.95);
+}
+
+
+.blink {
+    animation: blink 1s steps(2, start) infinite;
+}
+
+.battery-empty-icon {
+    width: 3.8em;
+    height: auto;
+}
+
+.alarm-item {
+    min-height: 36px;
+}
+
+.alarm-item > span {
+    display: inline-block;
+    line-height: 1.2;
+}
+
+.delete-alarm-btn {
+    height: 28px;
+    padding: 4px 10px;
+    font-size: 0.95em;
+}

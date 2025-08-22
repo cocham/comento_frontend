@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project #1 시계</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="project-container">
+        <div class="widget-container">
+            <h1>알람 시계</h1>
+            <div class="status-bar">
+                <span>배터리: <span id="battery-level">100</span>%</span>
+            </div>
+
+            <div class="display-panel">
+                <div class="label">시간</div>
+                <div id="current-time" class="time-display">2025-08-22 21:42</div>
+            </div>
+
+            <div class="display-panel">
+                <div class="label">알림 현황</div>
+                <div id="alarm-list" class="alarm-display"></div>
+            </div>
+
+            <div class="control-panel">
+                <input type="number" id="hour-input" placeholder="시" min="0" max="23">
+                <input type="number" id="minute-input" placeholder="분" min="0" max="59">
+                <input type="number" id="second-input" placeholder="초" min="0" max="59">
+                <button id="add-alarm-btn">추가</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
