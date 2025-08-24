@@ -1,24 +1,8 @@
-const MAIN_FS_MAX = 36;   
-const MAIN_FS_MIN = 18;  
-
-function fitMainFont(){
-  const el = mainEl;
-  el.style.fontSize = MAIN_FS_MAX + 'px';
-  let size = MAIN_FS_MAX;
-  while (el.scrollWidth > el.clientWidth && size > MAIN_FS_MIN){
-    size -= 1;
-    el.style.fontSize = size + 'px';
-  }
-}
-window.addEventListener('resize', fitMainFont);
-
-
 (function(){
   const prevEl = document.getElementById('display-prev');
   const mainEl = document.getElementById('display-main');
   const keypad = document.querySelector('.keypad');
 
-  const MAX_DIGITS = 15;
   const PRECISION = 12;
 
   let current = '0';
@@ -27,6 +11,25 @@ window.addEventListener('resize', fitMainFont);
   let justEvaluated = false;
   let lastOp = null;
   let lastOperand = null;
+  
+  const MAIN_FS_MAX = 36;
+  const MAIN_FS_MIN = 18; 
+
+  function fitMainFont(){
+    const prevTO = mainEl.style.textOverflow;
+    mainEl.style.textOverflow = 'clip';
+
+    mainEl.style.fontSize = MAIN_FS_MAX + 'px';
+    let size = MAIN_FS_MAX;
+    while (mainEl.scrollWidth > mainEl.clientWidth && size > MAIN_FS_MIN){
+      size -= 1;
+      mainEl.style.fontSize = size + 'px';
+    }
+
+    mainEl.style.textOverflow = prevTO || '';
+  }
+
+  window.addEventListener('resize', fitMainFont);
 
   function updateDisplay(){
     mainEl.textContent = current;
@@ -49,22 +52,27 @@ window.addEventListener('resize', fitMainFont);
   }
 
   function inputDigit(d){
-    if (justEvaluated){
-      current = d;
-      justEvaluated = false;
-      lastOp = null;
-      lastOperand = null;
-      updateDisplay();
-      return;
-    }
-    if (current === '0'){
-      current = d;
-    } else {
-      if (current.replace(/[.-]/g,'').length >= MAX_DIGITS) return;
-      current += d;
-    }
+  if (justEvaluated){
+    current = d;
+    justEvaluated = false;
+    lastOp = null;
+    lastOperand = null;
+    updateDisplay();       
+    return;
+  }
+
+  const next = (current === '0') ? d : current + d;
+  const prev = current;
+
+  current = next;
+  updateDisplay();         
+
+  const sizePx = parseFloat(getComputedStyle(mainEl).fontSize);
+  if (sizePx <= MAIN_FS_MIN && mainEl.scrollWidth > mainEl.clientWidth){
+    current = prev;
     updateDisplay();
   }
+}
 
   function inputDecimal(){
     if (justEvaluated){
@@ -127,6 +135,7 @@ window.addEventListener('resize', fitMainFont);
       prevEl.textContent = `${formatNumber(String(a))} ${opToSymbol(lastOp)} ${formatNumber(String(b))} =`;
       current = String(roundResult(result));
       mainEl.textContent = current;
+      fitMainFont();
       return;
     }
   }
