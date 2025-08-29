@@ -1,0 +1,17 @@
+body{background:#f9fafb;color:#222;font-family:'Noto Sans KR',sans-serif;margin:0}
+.wrap{max-width:400px;margin:40px auto;padding:32px;background:#fff;border-radius:18px;box-shadow:0 6px 24px rgba(0,0,0,.08)}
+h1{margin-bottom:24px;font-size:22px}
+.field{margin-bottom:22px;display:flex;flex-direction:column;gap:8px}
+label{font-weight:700}
+input{padding:11px 12px;border:1px solid #cbd1db;border-radius:9px;font-size:15px}
+.row2{display:grid;grid-template-columns:1fr auto;gap:8px;align-items:center}
+.pw-wrap{display:grid;grid-template-columns:1fr auto;gap:8px;align-items:center}
+#toggle-pw.eye{width:40px;height:40px;padding:0;display:grid;place-items:center;background:#fff;border:1px solid #cbd1db;border-radius:8px;cursor:pointer}
+#check-id-btn{background:#2a63d7;color:#fff;border:none;padding:0 12px;height:40px;font-size:14px;border-radius:8px;white-space:nowrap;cursor:pointer}
+button.btn{width:100%;margin-top:10px;font-size:16px;padding:10px 16px;border:none;border-radius:9px;font-weight:700;background:#2a63d7;color:#fff;cursor:pointer}
+.msg{font-size:13px;color:#e63946;margin-top:-6px;min-height:18px}
+.msg.valid{color:#43aa8b}
+@media (max-width:420px){
+  .row2{grid-template-columns:1fr}
+  #check-id-btn{width:100%;height:42px}
+}

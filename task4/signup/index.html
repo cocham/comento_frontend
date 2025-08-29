@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>project #2 회원가입</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="wrap">
+    <h1>회원가입</h1>
+
+    <form id="signup-form">
+      <div class="field">
+        <label for="userid">아이디</label>
+        <div class="row2">
+          <input type="text" id="userid" required autocomplete="off" placeholder="최소 4자 이상" />
+          <button type="button" id="check-id-btn">아이디 중복 체크</button>
+        </div>
+        <span id="id-msg" class="msg"></span>
+      </div>
+
+      <div class="field">
+        <label for="password">비밀번호</label>
+        <div class="pw-wrap">
+          <input type="password" id="password" required />
+          <button type="button" id="toggle-pw" class="eye" aria-label="비밀번호 보기" aria-pressed="false" title="비밀번호 보기">
+            <svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M12 5c-5 0-9 4.5-10 7 1 2.5 5 7 10 7s9-4.5 10-7c-1-2.5-5-7-10-7zm0 12a5 5 0 1 1 0-10 5 5 0 0 1 0 10z"/>
+              <circle cx="12" cy="12" r="2.5"/>
+            </svg>
+          </button>
+        </div>
+        <span id="pw-msg" class="msg"></span>
+      </div>
+
+      <button type="submit" class="btn" id="submit-btn" disabled>가입하기</button>
+    </form>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>

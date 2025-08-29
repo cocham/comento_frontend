@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Project #1 To-Do List</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="wrap">
+    <h1>To-Do List</h1>
+
+    <form id="todo-form" class="card">
+      <div class="row">
+        <label class="field">
+          <span>제목</span>
+          <input id="todo-title" type="text" placeholder="예: 팀 미팅" required />
+        </label>
+
+        <div class="field">
+          <span>날짜 (휠로 선택)</span>
+          <div id="date-picker" class="datepicker" aria-label="날짜 선택">
+            <div class="spin" data-type="year">
+              <button type="button" class="spin-btn up" aria-label="연도 올리기">▲</button>
+              <div class="spin-value" tabindex="0" role="spinbutton" aria-valuemin="1900" aria-valuemax="2100" aria-valuenow="" aria-label="연도"></div>
+              <button type="button" class="spin-btn down" aria-label="연도 내리기">▼</button>
+              <div class="spin-label">년</div>
+            </div>
+            <div class="spin" data-type="month">
+              <button type="button" class="spin-btn up" aria-label="월 올리기">▲</button>
+              <div class="spin-value" tabindex="0" role="spinbutton" aria-valuemin="1" aria-valuemax="12" aria-valuenow="" aria-label="월"></div>
+              <button type="button" class="spin-btn down" aria-label="월 내리기">▼</button>
+              <div class="spin-label">월</div>
+            </div>
+            <div class="spin" data-type="day">
+              <button type="button" class="spin-btn up" aria-label="일 올리기">▲</button>
+              <div class="spin-value" tabindex="0" role="spinbutton" aria-valuemin="1" aria-valuemax="31" aria-valuenow="" aria-label="일"></div>
+              <button type="button" class="spin-btn down" aria-label="일 내리기">▼</button>
+              <div class="spin-label">일</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <label class="field">
+        <span>메모 (선택)</span>
+        <textarea id="todo-note" placeholder="메모를 적어두세요"></textarea>
+      </label>
+
+      <div class="actions">
+        <button class="btn primary" type="submit">일정 추가</button>
+        <button class="btn ghost" type="button" id="clear-all">전체 삭제</button>
+      </div>
+    </form>
+
+    <section class="card">
+      <header class="list-head">
+        <div class="muted">총 <b id="todo-count">0</b>건</div>
+        <br>
+      </header>
+      <ul id="todo-list" class="list" aria-live="polite"></ul>
+    </section>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
